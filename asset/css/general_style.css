@@ -1,0 +1,686 @@
+/* General css */
+.my-danger-text
+{
+    color:red;
+}
+.my-orange-text
+{
+    color:orange;
+}
+.my-success-text
+{
+    color:green;
+}
+.my-error-text
+{
+    color:red;
+}
+.my-black-text
+{
+    color:#000;
+}
+.my-pointer-item
+{
+    cursor: pointer;
+}
+.my-common-highlighter
+{
+    background-color:#ffffa1;
+}
+.my-noUnderline
+{
+    text-decoration: none !important;
+}
+.my-primary-highlighter
+{
+    background-color:#286090;
+    color:#fff;
+}
+.my-marginDown
+{
+    margin-bottom:10px;
+}
+.my-marginUp
+{
+    margin-top:15px;
+}
+.my-marginLR-zero
+{
+    margin-left:0 !important;
+    margin-right:0 !important;
+}
+.my-NoMargin
+{
+    margin:0;
+}
+.my-centerAlign
+{
+    margin:0 auto;
+}
+.my-keepRelative
+{
+    position:relative;
+}
+.my-fullWidth
+{
+    width:100% !important;
+}
+.fa-15x
+{
+    font-size:1.5em;
+}
+.my-bootstrap-background
+{
+    background-color:#e7e7e7;
+}
+.my-display-inline
+{
+    display: inline-block;
+}
+.my-marginTopBottom
+{
+    margin-top: 5px;
+    margin-bottom:5px;
+}
+.my-noBorderRadius
+{
+    border-radius: 0 !important;
+}
+.my-singleBorder
+{
+    border:1px solid #ccc;
+}
+.clear
+{
+    clear:both;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    /* display: none; <- Crashes Chrome on hover */
+    -webkit-appearance: none;
+    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+}
+.my-td-overlay
+{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(255,255,2555,0.7);
+    z-index: 10;
+    position: absolute;
+}
+.notification-indicator-big
+{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 5px;
+    -webkit-transform: scale(1,1);
+    -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -o-transform: scale(1,1);
+    transform: scale(1,1);
+    display:none;
+}
+.notification-indicator
+{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 12px;
+    right: 8px;
+    -webkit-transform: scale(1,1);
+    -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -o-transform: scale(1,1);
+    transform: scale(1,1);
+    display:none;
+}
+.notification-indicator-mobile
+{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    -webkit-transform: scale(1,1);
+    -moz-transform: scale(1,1);
+    -ms-transform: scale(1,1);
+    -o-transform: scale(1,1);
+    transform: scale(1,1);
+    display:none;
+}
+
+.notification-animate-cls
+{
+    display:block;
+    animation-name:notificationShow;
+    -o-animation-name:notificationShow;
+    -ms-animation-name:notificationShow;
+    -webkit-animation-name:notificationShow;
+    -moz-animation-name:notificationShow;
+    animation-duration:1s;
+    -o-animation-duration:1s;
+    -ms-animation-duration:1s;
+    -webkit-animation-duration:1s;
+    -moz-animation-duration:1s;
+    animation-iteration-count:1;
+    -o-animation-iteration-count:1;
+    -ms-animation-iteration-count:1;
+    -webkit-animation-iteration-count:1;
+    -moz-animation-iteration-count:1;
+    animation-direction:normal;
+    -o-animation-direction:normal;
+    -ms-animation-direction:normal;
+    -webkit-animation-direction:normal;
+    -moz-animation-direction:normal;
+}
+
+@keyframes notificationShow {
+    from {
+        -webkit-transform: scale(0,0);
+        -moz-transform: scale(0,0);
+        -ms-transform: scale(0,0);
+        -o-transform: scale(0,0);
+        transform: scale(0,0);
+    }
+    to{
+        -webkit-transform: scale(1,1);
+        -moz-transform: scale(1,1);
+        -ms-transform: scale(1,1);
+        -o-transform: scale(1,1);
+        transform: scale(1,1);
+    }
+}
+
+@-webkit-keyframes notificationShow {
+    from {
+        width:0;
+        height:0;
+    }
+    to{
+        width:10px;
+        height:10px;
+    }
+}
+
+/* Custom Loader */
+.custom-loader-body {
+    overflow:hidden;
+    position: relative;
+}
+.custom-loader-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.9;
+    z-index: 1000000;
+    background: #fff;
+    display: none;
+}
+#myCustomBeerLoader
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+/* Bootstrap Override */
+.row
+{
+    margin:0;
+}
+
+
+/* Beer Olympics Css */
+.beerHome
+{
+    background:#f8f8f8;
+    font-family: 'Averia Serif Libre' !important;
+}
+.beerHome .main-logo
+{
+    display: block;
+    width: 80px;
+    margin: 0 auto;
+}
+.beerHome .pink-color
+{
+    color:#ce2840;
+}
+.beerHome .common-pink-txt
+{
+    color:#ce2840;
+    font-style: italic;
+}
+.beerHome .common-black-txt
+{
+    color: #000;
+    opacity: 0.87;
+}
+.beerHome .bolder-black
+{
+    color:#000;
+    font-weight:bold;
+}
+.beerHome .custom-collapse-bar i
+{
+    float:none;
+    vertical-align: middle;
+    margin-left:5px;
+}
+.beerHome .games-panel
+{
+    box-shadow: none !important;
+    background-color:transparent;
+}
+.beerHome .games-img
+{
+    width:210px;
+}
+.beerHome .pmd-list .list-group-item
+{
+    padding:0;
+}
+.beerHome .games-description
+{
+    margin:20px;
+}
+.beerHome .swiper-container-horizontal>.swiper-pagination-bullets,.beerHome .swiper-pagination-custom, .swiper-pagination-fraction
+{
+    bottom:5px;
+}
+.beerHome .swiper-pagination-bullet
+{
+    background-color: rgba(0, 0, 0, 0.24);
+}
+.beerHome .swiper-pagination-bullet-active
+{
+    background-color: rgba(0, 0, 0, 0.54);
+}
+.beerHome .beer-olympics-logo
+{
+    display: block;
+    margin: 25px auto;
+    width: 325px;
+}
+.beerHome .pune-bus-logo
+{
+    width: 300px;
+    margin: 20px auto;
+}
+.beerHome .pune-bus-small-logo
+{
+    width: 300px;
+    margin: 20px auto;
+}
+.beerHome .my-trophy-img
+{
+    width: 100px;
+    margin: 20px;
+}
+.beerHome .bus-booking-btn
+{
+    text-transform: none;
+    background-color:#ce2840;
+    border-radius: 4px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.12);
+    color:#fff;
+    font-style: italic;
+}
+.beerHome #busBookerSeats
+{
+    width:75px;
+}
+.beerHome .included-images
+{
+    margin:0 auto;
+}
+.beerHome .included-list li
+{
+    margin:10px;
+}
+.beerHome .included-list li p
+{
+    font-size:13px;
+    padding-top:5px;
+}
+.beerHome .pmd-checkbox [type=checkbox]:checked+.pmd-checkbox-label:before
+{
+    background-color:rgba(206,40,64,0.87);
+}
+.beerHome .pmd-checkbox [type=checkbox]:checked+.pmd-checkbox-label:before,
+.beerHome .pmd-checkbox [type=checkbox]:not(:checked)+.pmd-checkbox-label:before
+{
+    border-color:rgba(206,40,64,0.54);
+}
+.beerHome .order-summary-divider
+{
+    width: 100%;
+    height: 14px;
+    border-bottom: 1px solid #ce2840;
+    text-align: center;
+}
+.beerHome .order-summary-divider span
+{
+    font-size:16px;
+    font-weight: bold;
+    text-align: center;
+    background-color:#f8f8f8;
+    color: #ce2840;
+    padding: 0 10px;
+}
+.beerHome .summary-list>li
+{
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: left;
+    vertical-align: top;
+}
+.beerHome .wagon-check
+{
+    margin-top:45px;
+}
+.beerHome .order-header
+{
+    padding:5px;
+    background-color:transparent !important;
+}
+.beerHome .order-header ul
+{
+    margin:0;
+}
+.beerHome .pmd-chip
+{
+    line-height:25px;
+}
+.beerHome .my-hr
+{
+    border-top:1px solid #000;
+    margin-top:5px;
+    margin-bottom:5px;
+}
+.beerHome .swiper-button-next, .beerHome .swiper-button-prev
+{
+    top:80%;
+    height:30px;
+    background-image:url(../images/right-arrow.jpg);
+}
+.beerHome .swiper-button-prev
+{
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.beerHome .sum_bus
+{
+    background:url('../images/sum_bus.png') no-repeat;
+    display:block;
+    width:14px;
+    height:17px;
+    background-size: 100% 100%;
+}
+.beerHome .sum_team
+{
+    background:url('../images/sum_team.png') no-repeat;
+    display:block;
+    width: 25px;
+    height: 13px;
+    margin-left: -15px;
+    background-size: 100% 100%;
+}
+.beerHome .sum_total
+{
+    background:url('../images/sum_total.png') no-repeat;
+    display:block;
+    width:10px;
+    height:17px;
+    background-size: 100% 100%;
+}
+.beerHome .total-row
+{
+    margin-right:-10px;
+}
+.my-spin
+{
+    webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+.my-shake
+{
+    animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+.logoHome .center-div
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    -webkit-transform:translateX(-50%) translateY(-50%);
+    text-align:center;
+}
+.logoHome #logoAnswer
+{
+    border-bottom: 1px solid #333;
+}
+.logoHome .playing-area img
+{
+    margin:0 auto;
+}
+.logoHome .playing-area .playing-timer
+{
+    position: fixed;
+    bottom: 100px;
+    left: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: #ccc;
+    border-radius: 50%;
+    padding-top: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+.logoHome .playing-area .playing-score
+{
+    position: fixed;
+    bottom: 100px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    background-color: green;
+    color:#fff;
+    border-radius: 50%;
+    padding-top: 14px;
+    font-size: 16px;
+    font-weight: bold;
+}
+/* Custom Progress bar */
+/* Progress Bar */
+.progress {
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    height: 4px;
+    display: block;
+    width: 100%;
+    background-color: rgba(206,40,64,0.4);
+    border-radius: 2px;
+    background-clip: padding-box;
+    margin: 0 auto;
+    overflow: hidden;
+}
+.progress .indeterminate {
+    background-color: #ce2840;
+}
+.progress .indeterminate:before {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate 2.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+    animation: indeterminate 2.5s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+}
+.progress .indeterminate:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate-short 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: indeterminate-short 2.5s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    -webkit-animation-delay: 1.15s;
+    animation-delay: 1.15s;
+}
+
+@-webkit-keyframes indeterminate {
+    0% {
+        left: -35%;
+        right: 100%; }
+    60% {
+        left: 100%;
+        right: -90%; }
+    100% {
+        left: 100%;
+        right: -90%; }
+}
+@keyframes indeterminate {
+    0% {
+        left: -35%;
+        right: 100%; }
+    60% {
+        left: 100%;
+        right: -90%; }
+    100% {
+        left: 100%;
+        right: -90%; }
+}
+@-webkit-keyframes indeterminate-short {
+    0% {
+        left: -200%;
+        right: 100%; }
+    60% {
+        left: 107%;
+        right: -8%; }
+    100% {
+        left: 107%;
+        right: -8%; }
+}
+@keyframes indeterminate-short {
+    0% {
+        left: -200%;
+        right: 100%; }
+    60% {
+        left: 107%;
+        right: -8%; }
+    100% {
+        left: 107%;
+        right: -8%; }
+}
+
+@-webkit-keyframes fa-spin
+{
+    0%
+    {
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg)
+    }
+    100%
+    {
+        -webkit-transform:rotate(359deg);
+        transform:rotate(359deg)
+    }
+}
+@keyframes fa-spin
+{
+    0%
+    {
+        -webkit-transform:rotate(0deg);
+        transform:rotate(0deg)
+    }
+    100%
+    {
+        -webkit-transform:rotate(359deg);
+        transform:rotate(359deg)
+    }
+}
+
+@-webkit-keyframes shake {
+    10%, 90% {
+        -webkit-transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        -webkit-transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        -webkit-transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        -webkit-transform: translate3d(4px, 0, 0);
+    }
+}
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@media screen and (max-width:767px)
+{
+    .beerHome .wagon-check
+    {
+        margin-top:0;
+    }
+}
+@media screen and (max-width:500px)
+{
+    .beerHome .media-left.media-middle
+    {
+        display:block !important;
+    }
+    .media-left, .media>.pull-left
+    {
+        padding-right:0;
+    }
+}
+@media screen and (max-width:400px)
+{
+    .beerHome .summary-list>li
+    {
+        padding-right:5px;
+        padding-left:5px;
+    }
+}
