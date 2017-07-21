@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Class Dashboard_Model
+ * Class Events_Model
  * @property Mydatafetch_library $mydatafetch_library
  * @property Generalfunction_library $generalfunction_library
  */
-class Home_Model extends CI_Model
+class Events_Model extends CI_Model
 {
 	function __construct()
 	{
@@ -14,12 +14,15 @@ class Home_Model extends CI_Model
         $this->load->library('mydatafetch_library');
 	}
 
-    public function saveErrorLog($details)
+	public function getTodayEventsByLoc()
     {
-        $details['insertedDateTime'] = date('Y-m-d H:i:s');
-        $details['fromWhere'] = 'Beer Olympics';
-        $this->db->insert('errorlogger', $details);
-        return true;
+        $query = "select l.locName, count(em.eventId) as 'totalEvents' FROM locationmaster l
+                  LEFT JOIN eventmaster em ON em.eventPlace = l.id
+                  WHERE em.eventDate = CURRENT_DATE()
+                  GROUP BY l.locName";
+
+        $result = $this->db->query($query)->result_array();
+        return $result;
     }
 
     public function saveClientApp($details)
