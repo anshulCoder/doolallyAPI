@@ -7,7 +7,6 @@
  * @property Sendemail_library $sendemail_library
  * @property curl_library $curl_library
  * @property Mobile_Detect $mobile_detect
- * @property ApiServer $apiServer
  * @property CI_User_agent $agent
  * @property CI_Session $session
  * @property CI_Config $config
@@ -43,7 +42,7 @@ class MY_Controller extends CI_Controller
 		$this->load->library('sendemail_library');
 		$this->load->library('Mobile_Detect');
 		$this->load->library('curl_library');
-		$this->load->library('ApiServer');
+        $this->load->library('ApiServer','apiserver');
 
 		//
 		if($this->agent->is_referral() == false)

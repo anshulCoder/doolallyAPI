@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Class Home
  * @property generalfunction_library $generalfunction_library
  * @property Home_model $home_model
+ * @property Feedback_model $feedback_model
  */
 
 class Home extends MY_Controller {
@@ -17,16 +18,11 @@ class Home extends MY_Controller {
 
     public function getAccessToken()
     {
-        $this->apiServer->client_credentials();
+        $this->apiserver->client_credentials();
     }
     public function index()
 	{
-        $data = array();
-        $data['globalStyle'] = $this->dataformatinghtml_library->getGlobalStyleHtml($data);
-        $data['globalJs'] = $this->dataformatinghtml_library->getGlobalJsHtml($data);
-        $data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
-
-        $this->load->view('HomeView', $data);
+        echo 'Doolally API Documentation!';
 	}
 
     public function saveErrorLog()

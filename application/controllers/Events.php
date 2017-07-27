@@ -13,35 +13,126 @@ class Events extends MY_Controller {
     {
         parent::__construct();
         $this->load->model('events_model');
-        $this->apiServer->require_scope('events');
+        $this->apiserver->require_scope('events');
     }
 
-    public function getDailyEvents()
+    public function index()
+    {
+        echo 'Nothing Here!';
+    }
+
+    //First End Point
+    public function getDailyEventsCount()
     {
         $data= array();
-        $events = $this->events_model->getTodayEventsByLoc();
-        if(isset($events) && myIsArray($events))
+        $post = $this->input->post();
+        if(isset($post['locId']))
         {
-            $data['status'] = true;
-            $data['eventData'] = $events;
+            $events = $this->events_model->getTodayEventsByLoc($post['locId']);
+            if(isset($events) && myIsArray($events))
+            {
+                $data['status'] = true;
+                $data['eventData'] = $events;
+            }
+            else
+            {
+                $data['status'] = false;
+                $data['message'] = 'No Events Scheduled!';
+            }
         }
         else
         {
             $data['status'] = false;
-            $data['message'] = 'No Events Scheduled!';
+            $data['message'] = 'Please Provide the Location Id!';
         }
+
         echo json_encode($data);
     }
 
-    public function index()
-	{
+    //Second End Point
+    public function getDailyEventsInfo()
+    {
         $data = array();
-        $data['globalStyle'] = $this->dataformatinghtml_library->getGlobalStyleHtml($data);
-        $data['globalJs'] = $this->dataformatinghtml_library->getGlobalJsHtml($data);
-        $data['headerView'] = $this->dataformatinghtml_library->getHeaderHtml($data);
+        $post = $this->input->post();
 
-        $this->load->view('HomeView', $data);
-	}
+        if(isset($post['locId']))
+        {
+            $eventD = $this->events_model->getTodayEventsDetails($post['locId']);
+            if(isset($eventD) && myIsArray($eventD))
+            {
+                $data['status'] = true;
+                $data['eventDetails'] = $eventD;
+            }
+            else
+            {
+                $data['status'] = false;
+                $data['error'] = 'No Events Found!';
+            }
+        }
+        else
+        {
+            $data['status'] = false;
+            $data['message'] = 'Please Provide the Location Id!';
+        }
 
+        echo json_encode($data);
+    }
+
+    public function getAllTaprooms()
+    {
+        $data = array();
+
+        $allLocs = $this->events_model->getAllLocs();
+
+        if(isset($allLocs) && myIsArray($allLocs))
+        {
+            $data['status'] = true;
+            $data['locations'] = $allLocs;
+        }
+        else
+        {
+            $data['status'] = false;
+            $data['error'] = 'No Taprooms Found!';
+        }
+
+        echo  json_encode($data);
+    }
+
+    //Third End Point
+    public function eventsByTimeSpan()
+    {
+        $post = $this->input->post();
+        $data = array();
+
+        if(isset($post['startDate']) && isset($post['endDate']))
+        {
+            if(isset($post['locId']))
+            {
+                $eventData = $this->events_model->getEventsByTime($post['startDate'],$post['endDate'],$post['locId']);
+                if(isset($eventData) && myIsArray($eventData))
+                {
+                    $data['status'] = true;
+                    $data['eventDate'] = $eventData;
+                }
+                else
+                {
+                    $data['status'] = false;
+                    $data['error'] = 'No Scheduled Events!';
+                }
+            }
+            else
+            {
+                $data['status'] = false;
+                $data['error'] = 'Please Provide the Location Id!';
+            }
+        }
+        else
+        {
+            $data['status'] = false;
+            $data['error'] = 'Start or End Date not set!';
+        }
+
+        echo  json_encode($data);
+    }
 
 }

@@ -5,12 +5,14 @@
 
 class ApiServer{
 	function __construct($config=array()){
+        $this->_CI = &get_instance();
 		require_once(__DIR__.'/../config/database.php');							//database config
 		require_once(__DIR__.'/../third_party/Oauth2/src/OAuth2/Autoloader.php');	//oauth library
-		$config = $db['default'];
+        $this->_CI->load->database('default');
+		$config = $this->_CI->db;// $db['default'];
 		
 		OAuth2\Autoloader::register();
-		$this->storage = new OAuth2\Storage\Pdo(array('dsn' => $config["dsn"], 'username' => $config["username"], 'password' => $config["password"]));
+		$this->storage = new OAuth2\Storage\Pdo(array('dsn' => $config->dsn, 'username' => $config->username, 'password' => $config->password));
 		$this->server = new OAuth2\Server($this->storage, array('allow_implicit' => true));
 		$this->request = OAuth2\Request::createFromGlobals();
 		$this->response = new OAuth2\Response();

@@ -123,6 +123,12 @@ defined('INSTA_API_KEY') OR define('INSTA_API_KEY','362388bd44886b30aa0d9973d7b9
 defined('INSTA_AUTH_TOKEN') OR define('INSTA_AUTH_TOKEN','2e8a6cb6ddb931a722e05d2c99dc3888');
 
 
+defined('EVENT_WAITING')   OR define('EVENT_WAITING', 0);
+defined('EVENT_APPROVED')   OR define('EVENT_APPROVED', 1);
+defined('EVENT_DECLINED')   OR define('EVENT_DECLINED', 2);
+defined('EVENT_CANCEL_REVIEW') OR define('EVENT_CANCEL_REVIEW', 1);
+defined('EVENT_CANCEL_FINAL') OR define('EVENT_CANCEL_FINAL', 2);
+
 defined('DEFAULT_SENDER_EMAIL') OR define('DEFAULT_SENDER_EMAIL','events@brewcraftsindia.com');
 defined('DEFAULT_SENDER_PASS') OR define('DEFAULT_SENDER_PASS','doolally123');
 
